@@ -1,0 +1,128 @@
+﻿PM> Update-Database -verbose
+Using project 'JashimToken'.
+Using startup project 'JashimToken'.
+Build started...
+Build succeeded.
+C:\Program Files\dotnet\dotnet.exe exec --depsfile D:\Jashim\Job\Patrick\JashimToken\bin\Debug\net6.0\JashimToken.deps.json --additionalprobingpath C:\Users\ASUS\.nuget\packages --additionalprobingpath "C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages" --runtimeconfig D:\Jashim\Job\Patrick\JashimToken\bin\Debug\net6.0\JashimToken.runtimeconfig.json C:\Users\ASUS\.nuget\packages\microsoft.entityframeworkcore.tools\6.0.14\tools\netcoreapp2.0\any\ef.dll database update --verbose --no-color --prefix-output --assembly D:\Jashim\Job\Patrick\JashimToken\bin\Debug\net6.0\JashimToken.dll --project D:\Jashim\Job\Patrick\JashimToken\JashimToken.csproj --startup-assembly D:\Jashim\Job\Patrick\JashimToken\bin\Debug\net6.0\JashimToken.dll --startup-project D:\Jashim\Job\Patrick\JashimToken\JashimToken.csproj --project-dir D:\Jashim\Job\Patrick\JashimToken\ --language C# --configuration Debug --working-dir D:\Jashim\Job\Patrick\JashimToken --root-namespace JashimToken --nullable
+Using assembly 'JashimToken'.
+Using startup assembly 'JashimToken'.
+Using application base 'D:\Jashim\Job\Patrick\JashimToken\bin\Debug\net6.0'.
+Using working directory 'D:\Jashim\Job\Patrick\JashimToken'.
+Using root namespace 'JashimToken'.
+Using project directory 'D:\Jashim\Job\Patrick\JashimToken\'.
+Remaining arguments: .
+Finding DbContext classes...
+Finding IDesignTimeDbContextFactory implementations...
+Finding application service provider in assembly 'JashimToken'...
+Finding Microsoft.Extensions.Hosting service provider...
+Using environment 'Development'.
+Using application service provider from Microsoft.Extensions.Hosting.
+Found DbContext 'JashimTokenDbContext'.
+Finding DbContext classes in the project...
+Using context 'JashimTokenDbContext'.
+Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 6.0.14 initialized 'JashimTokenDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.14' with options: None
+Finding design-time services referenced by assembly 'JashimToken'...
+Finding design-time services referenced by assembly 'JashimToken'...
+No referenced design-time services were found.
+Finding design-time services for provider 'Microsoft.EntityFrameworkCore.SqlServer'...
+Using design-time services from provider 'Microsoft.EntityFrameworkCore.SqlServer'.
+Finding IDesignTimeServices implementations in assembly 'JashimToken'...
+No design-time services were found.
+Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (375ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+      CREATE DATABASE [JashimTokenDB];
+Executed DbCommand (375ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+CREATE DATABASE [JashimTokenDB];
+Executed DbCommand (129ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [JashimTokenDB] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (129ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+      IF SERVERPROPERTY('EngineEdition') <> 5
+      BEGIN
+          ALTER DATABASE [JashimTokenDB] SET READ_COMMITTED_SNAPSHOT ON;
+      END;
+Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT 1
+Executed DbCommand (63ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (63ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE [__EFMigrationsHistory] (
+          [MigrationId] nvarchar(150) NOT NULL,
+          [ProductVersion] nvarchar(32) NOT NULL,
+          CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+      );
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT 1
+Executed DbCommand (38ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (38ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [MigrationId], [ProductVersion]
+      FROM [__EFMigrationsHistory]
+      ORDER BY [MigrationId];
+Microsoft.EntityFrameworkCore.Migrations[20402]
+      Applying migration '20230215164838_Initial Create'.
+Applying migration '20230215164838_Initial Create'.
+Executed DbCommand (37ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [Id] int NOT NULL IDENTITY,
+    [Username] nvarchar(max) NOT NULL,
+    [PasswordHash] varbinary(max) NOT NULL,
+    [PasswordSalt] varbinary(max) NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([Id])
+);
+Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (37ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE [Users] (
+          [Id] int NOT NULL IDENTITY,
+          [Username] nvarchar(max) NOT NULL,
+          [PasswordHash] varbinary(max) NOT NULL,
+          [PasswordSalt] varbinary(max) NOT NULL,
+          CONSTRAINT [PK_Users] PRIMARY KEY ([Id])
+      );
+Executed DbCommand (90ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'PasswordHash', N'PasswordSalt', N'Username') AND [object_id] = OBJECT_ID(N'[Users]'))
+    SET IDENTITY_INSERT [Users] ON;
+INSERT INTO [Users] ([Id], [PasswordHash], [PasswordSalt], [Username])
+VALUES (-1, 0xA3DEC42362967C2B58A4DBDCB6305EBAFFA8FDCB532A901CFCFE26B3E7ED5465B5275F2E3F791D6F51582661891F211587F7A47CEA66030C31C3DADA68FA2EDE, 0xEE23A679FCFB209912370FA1D69ABD760E948C928E61A553F9FC8674C62B35F553EF167C7CB6A8EA15B14532F7B5D91E8DCC28B813E5DB578676EB818C91BD7E7D32EEA5586D2462F9964DC82845E4D5C990516D5576F1E82EF05A833A1668E5FB5A61186EBE4EEEAD4C07CD1143517A863B9785A1B4E7C04BB78DECCD85624A, N'Jashim');
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'PasswordHash', N'PasswordSalt', N'Username') AND [object_id] = OBJECT_ID(N'[Users]'))
+    SET IDENTITY_INSERT [Users] OFF;
+Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (90ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'PasswordHash', N'PasswordSalt', N'Username') AND [object_id] = OBJECT_ID(N'[Users]'))
+          SET IDENTITY_INSERT [Users] ON;
+      INSERT INTO [Users] ([Id], [PasswordHash], [PasswordSalt], [Username])
+      VALUES (-1, 0xA3DEC42362967C2B58A4DBDCB6305EBAFFA8FDCB532A901CFCFE26B3E7ED5465B5275F2E3F791D6F51582661891F211587F7A47CEA66030C31C3DADA68FA2EDE, 0xEE23A679FCFB209912370FA1D69ABD760E948C928E61A553F9FC8674C62B35F553EF167C7CB6A8EA15B14532F7B5D91E8DCC28B813E5DB578676EB818C91BD7E7D32EEA5586D2462F9964DC82845E4D5C990516D5576F1E82EF05A833A1668E5FB5A61186EBE4EEEAD4C07CD1143517A863B9785A1B4E7C04BB78DECCD85624A, N'Jashim');
+      IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'PasswordHash', N'PasswordSalt', N'Username') AND [object_id] = OBJECT_ID(N'[Users]'))
+          SET IDENTITY_INSERT [Users] OFF;
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20230215164838_Initial Create', N'6.0.14');
+Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+      VALUES (N'20230215164838_Initial Create', N'6.0.14');
+Done.
+PM> 
